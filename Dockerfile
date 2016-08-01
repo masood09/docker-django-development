@@ -37,7 +37,7 @@ RUN rm -rf /usr/share/doc \
            /usr/share/locale/ \
            /var/cache/man
 
-# Clean up APT when done.
+# Clean up APT when done..
 RUN apt-get clean
 RUN apt-get autoclean
 RUN apt-get autoremove
