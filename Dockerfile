@@ -38,7 +38,6 @@ RUN npm install -g phantomjs-prebuilt
 RUN curl -O https://bootstrap.pypa.io/get-pip.py
 RUN python get-pip.py
 RUN rm -f get-pip.py
-RUN pip install Pillow
 
 # Clean up APT and bundler when done.
 RUN rm -rf /usr/share/doc \
