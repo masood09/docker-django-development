@@ -19,8 +19,7 @@ RUN apt-get update && \
         libxml2-dev \
         libxslt1-dev \
         openssh-client \
-        file \
-        pillow
+        file
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y --no-install-recommends nodejs
