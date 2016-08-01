@@ -19,12 +19,26 @@ RUN apt-get update && \
         libxml2-dev \
         libxslt1-dev \
         openssh-client \
-        file
+        file \
+        libtiff5-dev \
+        libjpeg-dev \
+        zlib1g-dev \
+        libfreetype6-dev \
+        liblcms2-dev \
+        tcl8.6-dev \
+        tk8.6-dev \
+        python-tk
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y --no-install-recommends nodejs
 RUN ln -sf /usr/bin/nodejs /usr/local/bin/node
 RUN npm install -g phantomjs-prebuilt
+
+
+RUN curl -O https://bootstrap.pypa.io/get-pip.py
+RUN python get-pip.py
+RUN rm -f get-pip.py
+RUN pip install Pillow
 
 # Clean up APT and bundler when done.
 RUN rm -rf /usr/share/doc \
