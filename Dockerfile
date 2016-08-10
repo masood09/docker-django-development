@@ -6,6 +6,7 @@ EXPOSE 8000
 
 ENV HOME /root
 ENV APP_HOME /application/
+ENV C_FORCE_ROOT=true
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends build-essential \
@@ -33,11 +34,6 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 RUN apt-get install -y --no-install-recommends nodejs
 RUN ln -sf /usr/bin/nodejs /usr/local/bin/node
 RUN npm install -g phantomjs-prebuilt
-
-
-RUN curl -O https://bootstrap.pypa.io/get-pip.py
-RUN python get-pip.py
-RUN rm -f get-pip.py
 
 # Clean up APT and bundler when done.
 RUN rm -rf /usr/share/doc \
